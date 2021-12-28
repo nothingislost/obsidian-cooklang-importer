@@ -1,4 +1,4 @@
-import { Modal, Setting } from "obsidian";
+import { Modal, Notice, Setting } from "obsidian";
 import { scrapeRecipe } from "./importer";
 import CooklangImporterPlugin from "./main";
 
@@ -16,8 +16,12 @@ export class ImportRecipeModal extends Modal {
     if (this.address === "") return;
     const result = await scrapeRecipe(this.address);
     if (result) {
-      const newFile = await this.plugin.cookFileCreator(result.name, result.content);
-      this.app.workspace.getLeaf().openFile(newFile);
+      if ((this.app as any).plugins.getPlugin("cooklang-obsidian")?._loaded) {
+        const newFile = await this.plugin.cookFileCreator(result.name, result.content);
+        this.app.workspace.getLeaf().openFile(newFile);
+      } else {
+        new Notice("Cooklang Importer Error: Install and enable the CookLang Editor plugin before importing recipes.")
+      }
       this.close();
     } else {
       this.close();

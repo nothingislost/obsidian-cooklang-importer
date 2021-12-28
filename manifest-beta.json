@@ -1,7 +1,7 @@
 {
   "id": "obsidian-cooklang-importer",
   "name": "Cooklang Importer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "minAppVersion": "0.12.5",
   "description": "An experimental Obsidian plugin that parses recipes from websites and converts them to cooklang format",
   "author": "NothingIsLost",
