@@ -17,9 +17,9 @@
     "builtin-modules": "^3.2.0",
     "esbuild": "0.13.12",
     "obsidian": "^0.13.8",
-    "tslib": "2.3.1",
-    "typescript": "4.4.4",
     "parse-ingredient": "^0.4.0",
-    "recipe-scraper": "https://github.com/nothingislost/Recipe-Scraper"
+    "recipe-scraper": "https://github.com/nothingislost/Recipe-Scraper",
+    "tslib": "2.3.1",
+    "typescript": "4.4.4"
   }
 }
